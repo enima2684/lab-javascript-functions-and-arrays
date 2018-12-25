@@ -41,26 +41,26 @@ var words = [
  * @param arrayOfWords
  */
 function findLongestWord(arrayOfWords){
-
-  var currentWord;
-  var longestWord = arrayOfWords[0];
-
-  for(var i=0; i<arrayOfWords.length; i++){
-    currentWord = arrayOfWords[i];
-    if (currentWord.length > longestWord.length){
-      longestWord = currentWord;
-    }
-  }
+  //
+  // var currentWord;
+  // var longestWord = arrayOfWords[0];
+  //
+  // for(var i=0; i<arrayOfWords.length; i++){
+  //   currentWord = arrayOfWords[i];
+  //   if (currentWord.length > longestWord.length){
+  //     longestWord = currentWord;
+  //   }
+  // }
 
   // other potential solution
-  // wordLengths   = arrayOfWords.map(function(x){return x.length});
-  // maximalLength = wordLengths.reduce(maxOfTwoNumbers);
-  // ixLongestWord = wordLengths.indexOf(maximalLength);
-  // longestWord   = arrayOfWords[ixLongestWord];
-  // return longestWord;
-
-
+  wordLengths   = arrayOfWords.map(function(x){return x.length});
+  maximalLength = wordLengths.reduce(maxOfTwoNumbers);
+  ixLongestWord = wordLengths.indexOf(maximalLength);
+  longestWord   = arrayOfWords[ixLongestWord];
   return longestWord;
+
+
+  // return longestWord;
 }
 
 
@@ -224,8 +224,9 @@ var wordsCount = [
  */
 function howManyTimes(arrayOfWords, word){
 
-  return arrayOfWords.map((x)=>{ return (x === word) * 1}
-      ).reduce((x, y)=>{return x+y}, false)
+  return arrayOfWords
+    .map((x)=>{ return (x === word) * 1})
+    .reduce((x, y)=>{return x+y}, false)
 
 }
 // Bonus Quest
